@@ -23,8 +23,10 @@
     background-color: rgb(154, 154, 154);
 }
 
-.button:hover {
-    background-color: rgb(217, 217, 217);
-    scale: 1.25 1.25;
-    transition-property: scale;
+.hover {
+    transition-duration: 0.1s;
+}
+
+.hover:hover {
+    scale: 1.2 1.2;
 }
