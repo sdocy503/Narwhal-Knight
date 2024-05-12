@@ -1,0 +1,9 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=5b02c196d6169c94095180f0abb97b7d&amp;type=3#MainMenuStyle" />
+    <engine:VisualElement name="Container" class="container" style="flex-grow: 1;">
+        <engine:Label text="Main Menu" class="title element-padding element-spacing" />
+        <engine:Button text="Start" class="button element-padding element-spacing" />
+        <engine:Button text="Options" class="button element-spacing" />
+        <engine:Button text="Exit" class="button" />
+    </engine:VisualElement>
+</engine:UXML>

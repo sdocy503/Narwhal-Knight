@@ -1,0 +1,30 @@
+.title {
+    font-size: 106px;
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+    margin-bottom: 30px;
+}
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    font-size: 42px;
+    margin-bottom: 50px;
+    width: 250px;
+    height: 75px;
+    transition-duration: 0.1s;
+    background-color: rgb(154, 154, 154);
+}
+
+.button:hover {
+    background-color: rgb(217, 217, 217);
+    scale: 1.25 1.25;
+    transition-property: scale;
+}
