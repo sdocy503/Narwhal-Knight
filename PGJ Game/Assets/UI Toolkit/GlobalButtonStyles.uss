@@ -1,0 +1,14 @@
+.hover {
+    transition-duration: 0.1s;
+}
+
+.hover:hover {
+    scale: 1.2 1.2;
+}
+
+.button {
+    width: 250px;
+    height: 75px;
+    transition-duration: 0.1s;
+    background-color: rgb(154, 154, 154);
+}

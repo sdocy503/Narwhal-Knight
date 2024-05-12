@@ -1,0 +1,21 @@
+.title {
+    font-size: 106px;
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+}
+
+.spacing {
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.button-text {
+    font-size: 42px;
+}
+
+.subheader {
+    font-size: 54px;
+    -unity-font-style: bold;
+}

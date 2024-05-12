@@ -1,9 +1,11 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=5b02c196d6169c94095180f0abb97b7d&amp;type=3#MainMenuStyle" />
+    <Style src="project://database/Assets/GlobalTextStyles.uss?fileID=7433441132597879392&amp;guid=64d14fe53d0058240aae2aa762c8766a&amp;type=3#GlobalTextStyles" />
+    <Style src="project://database/Assets/GlobalButtonStyles.uss?fileID=7433441132597879392&amp;guid=61ac0e82dfdebd947b9eb501c52ff454&amp;type=3#GlobalButtonStyles" />
     <engine:VisualElement name="Container" class="container" style="flex-grow: 1;">
-        <engine:Label text="Main Menu" class="title element-padding element-spacing" />
-        <engine:Button text="Start" name="Start" class="button element-padding element-spacing hover" />
-        <engine:Button text="Options" name="Options" class="button element-spacing hover" />
-        <engine:Button text="Exit" name="Exit" class="button hover" />
+        <engine:Label text="Main Menu" class="title element-padding element-spacing" style="margin-bottom: 50px;" />
+        <engine:Button text="Start" name="Start" class="button element-padding element-spacing hover button-text" />
+        <engine:Button text="Options" name="Options" class="button element-spacing hover button-text" />
+        <engine:Button text="Exit" name="Exit" class="button hover button-text" />
     </engine:VisualElement>
 </engine:UXML>
