@@ -4,6 +4,10 @@ public class PlayerMovement : MonoBehaviour {
 	public float maxChargeTime = 2.0f;
 	public float powerMultiplier = 10.0f;
 	public float brakeForce = 0.1f;
+	public float killSpeedThreshold = 10f;
+
+	public int score;
+	public int coins;
 
 	private Rigidbody2D rb;
 	private float chargeStartTime = 0.0f;
@@ -36,9 +40,9 @@ public class PlayerMovement : MonoBehaviour {
 				rb.AddForce(direction * forceMagnitude, ForceMode2D.Impulse);
 			}
 		}
+
 		// Apply a brake force to the player if the player is moving, just so the player doesn't keep moving forever
-		if (rb.velocity.magnitude > 0)
-		{
+		if (rb.velocity.magnitude > 0) {
 			rb.AddForce(-rb.velocity * brakeForce);
 		}
 
@@ -48,6 +52,21 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		else {
 			spriteRenderer.flipX = false;
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+		// If the player is moving fast enough and collides with an enemy, destroy the enemy
+		if (rb.velocity.magnitude > killSpeedThreshold && collision.gameObject.CompareTag("Enemy")) {
+			score++;
+			Destroy(collision.gameObject);
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.CompareTag("Coins")) {
+			coins++;
+			Destroy(other.gameObject);
 		}
 	}
 }
