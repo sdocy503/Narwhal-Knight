@@ -14,8 +14,12 @@
                     <engine:DataBinding property="timeLimit" data-source-path="timeLimit" data-source-type="Timer, Assembly-CSharp" binding-mode="ToTarget" />
                 </Bindings>
             </TimerComponent>
-            <engine:VisualElement name="Spacer" class="spacer" style="width: 1500px;" />
+            <engine:VisualElement name="Spacer" class="spacer" style="width: 1200px;" />
+            <engine:VisualElement name="MovePlate" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgb(163, 163, 163); border-top-left-radius: 100px; border-top-right-radius: 100px; border-bottom-right-radius: 100px; border-bottom-left-radius: 100px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 7.5px; border-right-width: 7.5px; border-bottom-width: 7.5px; border-left-width: 7.5px; transition-property: scale;">
+                <engine:Label text="Moves:" class="subheader" style="width: 150px; -unity-text-align: middle-center;" />
+                <engine:Label text="14/21" name="MoveCount" class="subheader" style="-unity-text-align: middle-center; width: 150px;" />
+            </engine:VisualElement>
         </engine:VisualElement>
-        <engine:VisualElement name="Spacer" class="spacer" style="height: 650px;" />
+        <engine:VisualElement name="Spacer" class="spacer" style="height: 700px;" />
     </engine:VisualElement>
 </engine:UXML>

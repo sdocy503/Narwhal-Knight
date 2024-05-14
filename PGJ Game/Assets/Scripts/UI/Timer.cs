@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     public float time = 0.0f;
     public float timeLimit = 1.0f;
     public int timeInt = 0;
+    private float t = 0.0f;
 
     private void Start()
     {
@@ -22,7 +23,8 @@ public class Timer : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        time += Time.fixedDeltaTime;
+        t += Time.fixedDeltaTime;
+        time = (int)t;
         timeInt = (int)(timeLimit - time);
     }
 }
