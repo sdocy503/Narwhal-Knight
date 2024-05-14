@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endScreen: {fileID: 1992795560}
+  data: {fileID: 11400000, guid: 8b7290aa7d5b0274e9aa224210523936, type: 2}
 --- !u!4 &294223612
 Transform:
   m_ObjectHideFlags: 0
@@ -312,6 +313,7 @@ GameObject:
   - component: {fileID: 1357262985}
   - component: {fileID: 1357262984}
   - component: {fileID: 1357262986}
+  - component: {fileID: 1357262987}
   m_Layer: 0
   m_Name: Hud
   m_TagString: Untagged
@@ -369,6 +371,20 @@ MonoBehaviour:
   time: 0
   timeLimit: 1
   timeInt: 0
+--- !u!114 &1357262987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357262983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ebef8923abf931438fada188cb79dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelData: {fileID: 11400000, guid: 289cb701df1edca418fbc169373755fd, type: 2}
+  playerData: {fileID: 11400000, guid: 8b7290aa7d5b0274e9aa224210523936, type: 2}
 --- !u!1 &1992795557
 GameObject:
   m_ObjectHideFlags: 0
