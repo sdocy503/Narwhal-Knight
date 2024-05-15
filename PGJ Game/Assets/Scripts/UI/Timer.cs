@@ -14,9 +14,6 @@ public class Timer : MonoBehaviour
     public int timeInt = 0;
     private float t = 0.0f;
 
-    readonly Vector3 sizeIncrease = new Vector3(0.15f, 0.15f, 0f);
-    Vector3 size;
-
     private void Start()
     {
         doc = GetComponent<UIDocument>();
@@ -24,24 +21,7 @@ public class Timer : MonoBehaviour
         comp.dataSource = this;
         comp = doc.rootVisualElement.Q<TimerComponent>();
         comp.dataSource = this;
-        size = comp.transform.scale;
         timeLimit = data.TimeLimit;
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonUp(0))
-        {
-            comp.style.transitionDuration = new List<TimeValue> { 0.25f };
-            comp.style.transitionTimingFunction = new List<EasingFunction> { EasingMode.EaseOutBounce };
-            comp.transform.scale = size;
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            comp.style.transitionDuration = new List<TimeValue> { 2.0f };
-            comp.style.transitionTimingFunction = new List<EasingFunction> { EasingMode.EaseOut };
-            comp.transform.scale = size + sizeIncrease;
-        }
     }
 
     private void FixedUpdate()

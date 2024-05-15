@@ -1,7 +1,7 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/USS/HUD.uss?fileID=7433441132597879392&amp;guid=cf69dee70a57b91448008ec58d22f754&amp;type=3#HUD" />
     <Style src="project://database/Assets/UI%20Toolkit/USS/GlobalTextStyles.uss?fileID=7433441132597879392&amp;guid=64d14fe53d0058240aae2aa762c8766a&amp;type=3#GlobalTextStyles" />
-    <engine:VisualElement name="Container" style="flex-grow: 1; margin-top: 25px; margin-right: 25px; margin-bottom: 25px; margin-left: 25px;">
+    <engine:VisualElement name="Container" style="flex-grow: 1; margin-top: 25px; margin-right: 25px; margin-bottom: 25px; margin-left: 25px; transition-property: all; transition-duration: 0.01s;">
         <engine:VisualElement name="Spacer" class="spacer" style="flex-direction: row; justify-content: center;">
             <TimerComponent style="flex-grow: 1; justify-content: center; align-items: center;">
                 <engine:Label text="123" name="Time" class="subheader" style="width: 100px; height: 75px; background-color: rgb(163, 163, 163); border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 7.5px; border-right-width: 7.5px; border-bottom-width: 7.5px; border-left-width: 7.5px; -unity-text-align: upper-center; padding-top: 10px; padding-right: 70px; padding-bottom: 80px; padding-left: 70px;">
