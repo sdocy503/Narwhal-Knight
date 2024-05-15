@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,30 +8,41 @@ public class PlayerMovement : MonoBehaviour {
 	public float powerMultiplier = 10.0f;
 	public float brakeForce = 0.1f;
 	public float killSpeedThreshold = 10f;
-	public GameObject endScreen;
+	public EndScreen endScreen;
 	public static List<GameObject> enemies = new();
 	public int score;
 	public int coins;
 	public PlayerData playerData;
 	public int moveLimit;
+	public int totalCoins;
+	public float levelTimeLimit = 60;
 
+	private Animator anim;
 	private Rigidbody2D rb;
 	private float chargeStartTime = 0.0f;
 	private SpriteRenderer spriteRenderer;
 	private float startTime;
 	private float endTime;
-	private float totalEnemyKillTime;
 	private int moveCount;
+	private float levelStartTime;
+	private int enemiesKilled;
+	private int coinsCollected;
 
 	private void Awake() {
 		rb = GetComponent<Rigidbody2D>();
 		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+		anim = GetComponentInChildren<Animator>();
+		anim.SetBool("Idle", true);
 		var enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
 		foreach (var enemy in enemyObjects) {
 			enemies.Add(enemy);
 		}
 
 		startTime = Time.time;
+	}
+
+	private void Start() {
+		levelStartTime = Time.time;
 	}
 
 	void Update() {
@@ -41,6 +53,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (Input.GetMouseButtonDown(0)) {
 			chargeStartTime = Time.time;
+			anim.SetBool("IsCharging", true);
 		}
 
 		if (Input.GetMouseButtonUp(0)) {
@@ -56,13 +69,20 @@ public class PlayerMovement : MonoBehaviour {
 				// If moveCount is greater than or equal to moveLimit, end the game
 				if (moveCount >= moveLimit) {
 					print("Game Over!");
-					//EndGame();
+					endScreen.Defeat();
+					StartCoroutine(LerpTimeScaleToZero(1));
 				}
+
+				anim.SetBool("IsCharging", false);
+				anim.SetTrigger("Charge");
 			}
 		}
 
 		if (rb.velocity.magnitude > 0) {
 			rb.AddForce(-rb.velocity * brakeForce);
+		}
+		else {
+			anim.SetBool("Idle", true);
 		}
 
 		if (mousePosition.x < transform.position.x) {
@@ -71,14 +91,19 @@ public class PlayerMovement : MonoBehaviour {
 		else {
 			spriteRenderer.flipY = false;
 		}
+
+		if (Time.time - levelStartTime > levelTimeLimit) {
+			print("Game Over!");
+			endScreen.Defeat();
+			StartCoroutine(LerpTimeScaleToZero(1));
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag("Enemy")) {
 			if (rb.velocity.magnitude > killSpeedThreshold) {
-				score++;
+				enemiesKilled++; // Increment the number of enemies killed
 				enemies.Remove(other.gameObject);
-				totalEnemyKillTime += Time.time - startTime;
 				Destroy(other.gameObject);
 			}
 			else {
@@ -87,13 +112,13 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (other.gameObject.CompareTag("Coins")) {
-			coins++;
+			coinsCollected++; // Increment the number of coins collected
 			Destroy(other.gameObject);
 		}
 
 		if (other.gameObject.CompareTag("End") && enemies.Count == 0) {
 			endTime = Time.time;
-			endScreen.SetActive(true);
+			endScreen.Victory();
 			StartCoroutine(LerpTimeScaleToZero(1));
 			print(CalculateScore());
 		}
@@ -113,12 +138,11 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	public float CalculateScore() {
-		var timeTaken = endTime - startTime;
-		var enemyPoints = enemies.Count * 100;
-		var coinPoints = coins * 50;
-		var timePenalty = timeTaken * 1;
+		var timeTaken = Time.time - levelStartTime;
+		var enemyPoints = enemiesKilled * 100;
+		var coinPoints = coinsCollected * 50;
 
-		var finalScore = enemyPoints + coinPoints - timePenalty;
+		var finalScore = enemyPoints + coinPoints - timeTaken;
 
 		finalScore = Mathf.Max(finalScore, 0);
 

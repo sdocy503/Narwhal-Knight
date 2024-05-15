@@ -129,13 +129,14 @@ GameObject:
   m_Component:
   - component: {fileID: 54315498}
   - component: {fileID: 54315497}
+  - component: {fileID: 54315499}
   m_Layer: 0
   m_Name: VictoryScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &54315497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +171,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &54315499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54315496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783cd96153415fa409356e860dca2d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &201632037
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,11 +395,13 @@ MonoBehaviour:
   powerMultiplier: 25
   brakeForce: 0.75
   killSpeedThreshold: 10
-  endScreen: {fileID: 54315496}
+  endScreen: {fileID: 54315499}
   score: 0
   coins: 0
   playerData: {fileID: 11400000, guid: 8b7290aa7d5b0274e9aa224210523936, type: 2}
   moveLimit: 5
+  totalCoins: 1
+  levelTimeLimit: 60
 --- !u!58 &316889755
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -433,6 +448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 461449420}
   - component: {fileID: 461449421}
+  - component: {fileID: 461449422}
   m_Layer: 0
   m_Name: Art
   m_TagString: Untagged
@@ -510,6 +526,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &461449422
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461449419}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &581950538
 GameObject:
   m_ObjectHideFlags: 0
