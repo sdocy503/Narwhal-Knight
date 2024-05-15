@@ -8,8 +8,8 @@ public class UITesting : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating("SwapVic", 4f, 4f);
-        InvokeRepeating("SwapDef", 2f, 4f);
+        InvokeRepeating("SwapVic", 6f, 8f);
+        InvokeRepeating("SwapDef", 2f, 8f);
     }
 
     void SwapVic()
