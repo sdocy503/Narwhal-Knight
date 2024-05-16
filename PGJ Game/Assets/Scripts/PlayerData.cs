@@ -15,7 +15,8 @@ public class PlayerData : ScriptableObject {
 		set
 		{
 			moveCount = value;
-			MoveCountChanged();
+			if(MoveCountChanged != null)
+				MoveCountChanged();
         }
 	}
 

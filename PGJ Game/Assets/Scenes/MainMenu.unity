@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainMenu: {fileID: 2041820023}
+  NumberOfLevels: 5
 --- !u!114 &1297615783
 MonoBehaviour:
   m_ObjectHideFlags: 0
