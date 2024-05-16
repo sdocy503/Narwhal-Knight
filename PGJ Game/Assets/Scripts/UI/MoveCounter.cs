@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEngine.UIElements.Experimental;
 
 public class MoveCounter : MonoBehaviour
 {
@@ -69,7 +67,7 @@ public class MoveCounter : MonoBehaviour
         container.transform.position = movePos;
     }
 
-    void UpdateMoveCount()
+    public void UpdateMoveCount()
     {
         moveCount.text = playerData.MoveCount + "/" + levelData.MoveLimit;
     }

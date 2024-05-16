@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour {
 	public int moveLimit;
 	public int totalCoins;
 	public float levelTimeLimit = 60;
-
+	public MoveCounter moveCounter;
+	
 	private Animator anim;
 	private Rigidbody2D rb;
 	private float chargeStartTime = 0.0f;
@@ -43,6 +44,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	private void Start() {
 		levelStartTime = Time.time;
+		playerData.MoveCount = moveCount;
+
 	}
 
 	void Update() {
@@ -65,7 +68,8 @@ public class PlayerMovement : MonoBehaviour {
 
 				// Increment moveCount when the player makes a move
 				moveCount++;
-
+				playerData.MoveCount = moveCount;
+				moveCounter.UpdateMoveCount();
 				// If moveCount is greater than or equal to moveLimit, end the game
 				if (moveCount >= moveLimit) {
 					print("Game Over!");
