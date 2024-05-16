@@ -604,11 +604,11 @@ PrefabInstance:
     - target: {fileID: 1795529458686229729, guid: 3de3f1eb2e0aed45e9019aa6033ffb25, type: 3}
       propertyPath: levelData
       value: 
-      objectReference: {fileID: 11400000, guid: fe9f767aa46d1043fa6dce0baa187f00, type: 2}
+      objectReference: {fileID: 11400000, guid: 543b79bbb58ca631da3e6832fe45d2d0, type: 2}
     - target: {fileID: 2081830474253318084, guid: 3de3f1eb2e0aed45e9019aa6033ffb25, type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: fe9f767aa46d1043fa6dce0baa187f00, type: 2}
+      objectReference: {fileID: 11400000, guid: 543b79bbb58ca631da3e6832fe45d2d0, type: 2}
     - target: {fileID: 3524740343418139364, guid: 3de3f1eb2e0aed45e9019aa6033ffb25, type: 3}
       propertyPath: m_Name
       value: Hud
