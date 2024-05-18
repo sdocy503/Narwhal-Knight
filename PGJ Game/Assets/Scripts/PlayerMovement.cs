@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 	public int totalCoins;
 	public float levelTimeLimit = 60;
 	public MoveCounter moveCounter;
+	public AudioClip killSound, dashSound, coinPickupSound;
 
 	private Animator anim;
 	private Rigidbody2D rb;
@@ -28,11 +28,13 @@ public class PlayerMovement : MonoBehaviour {
 	private float levelStartTime;
 	private int enemiesKilled;
 	private int coinsCollected;
+	private AudioSource audio;
 
 	private void Awake() {
 		rb = GetComponent<Rigidbody2D>();
 		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 		anim = GetComponentInChildren<Animator>();
+		audio = GetComponent<AudioSource>();
 		anim.SetBool("Idle", true);
 		var enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
 		foreach (var enemy in enemyObjects) {
@@ -43,6 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	private void Start() {
+		Time.timeScale = 1;
 		levelStartTime = Time.time;
 		moveCount = 0;
 		playerData.MoveCount = moveCount;
@@ -66,12 +69,10 @@ public class PlayerMovement : MonoBehaviour {
 					var forceMagnitude = chargeRatio * powerMultiplier;
 					direction.Normalize();
 					rb.AddForce(direction * forceMagnitude, ForceMode2D.Impulse);
-
-					// Increment moveCount when the player makes a move
+					audio.PlayOneShot(dashSound, 0.35f);
 					moveCount++;
 					playerData.MoveCount = moveCount;
 					moveCounter.UpdateMoveCount();
-					// If moveCount is greater than or equal to moveLimit, end the game
 					if (moveCount >= moveLimit) {
 						print("Game Over!");
 						endScreen.Defeat();
@@ -108,8 +109,9 @@ public class PlayerMovement : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag("Enemy")) {
 			if (rb.velocity.magnitude > killSpeedThreshold) {
-				enemiesKilled++; // Increment the number of enemies killed
+				enemiesKilled++;
 				enemies.Remove(other.gameObject);
+				audio.PlayOneShot(killSound);
 				Destroy(other.gameObject);
 			}
 			else {
@@ -118,7 +120,8 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (other.gameObject.CompareTag("Coins")) {
-			coinsCollected++; // Increment the number of coins collected
+			coinsCollected++;
+			audio.PlayOneShot(coinPickupSound);
 			Destroy(other.gameObject);
 		}
 
