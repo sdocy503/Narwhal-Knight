@@ -836,6 +836,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2694726539713988277, guid: e35d53f151c8b933f9be0d06ea13c205, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3802000961624366016, guid: e35d53f151c8b933f9be0d06ea13c205, type: 3}
       propertyPath: m_Name
       value: VictoryScreen

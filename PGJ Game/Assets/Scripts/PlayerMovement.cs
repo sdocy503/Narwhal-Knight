@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour {
 	public int totalCoins;
 	public float levelTimeLimit = 60;
 	public MoveCounter moveCounter;
-	
+
 	private Animator anim;
 	private Rigidbody2D rb;
 	private float chargeStartTime = 0.0f;
@@ -44,8 +44,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	private void Start() {
 		levelStartTime = Time.time;
+		moveCount = 0;
 		playerData.MoveCount = moveCount;
-
 	}
 
 	void Update() {
@@ -54,31 +54,33 @@ public class PlayerMovement : MonoBehaviour {
 		var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		rb.rotation = angle;
 
-		if (Input.GetMouseButtonDown(0)) {
-			chargeStartTime = Time.time;
-			anim.SetBool("IsCharging", true);
-		}
+		if (moveCount < moveLimit) {
+			if (Input.GetMouseButtonDown(0)) {
+				chargeStartTime = Time.time;
+				anim.SetBool("IsCharging", true);
+			}
 
-		if (Input.GetMouseButtonUp(0)) {
-			if (Time.time - chargeStartTime > 0.0f) {
-				var chargeRatio = Mathf.Clamp01((Time.time - chargeStartTime) / maxChargeTime);
-				var forceMagnitude = chargeRatio * powerMultiplier;
-				direction.Normalize();
-				rb.AddForce(direction * forceMagnitude, ForceMode2D.Impulse);
+			if (Input.GetMouseButtonUp(0)) {
+				if (Time.time - chargeStartTime > 0.0f) {
+					var chargeRatio = Mathf.Clamp01((Time.time - chargeStartTime) / maxChargeTime);
+					var forceMagnitude = chargeRatio * powerMultiplier;
+					direction.Normalize();
+					rb.AddForce(direction * forceMagnitude, ForceMode2D.Impulse);
 
-				// Increment moveCount when the player makes a move
-				moveCount++;
-				playerData.MoveCount = moveCount;
-				moveCounter.UpdateMoveCount();
-				// If moveCount is greater than or equal to moveLimit, end the game
-				if (moveCount >= moveLimit) {
-					print("Game Over!");
-					endScreen.Defeat();
-					StartCoroutine(LerpTimeScaleToZero(1));
+					// Increment moveCount when the player makes a move
+					moveCount++;
+					playerData.MoveCount = moveCount;
+					moveCounter.UpdateMoveCount();
+					// If moveCount is greater than or equal to moveLimit, end the game
+					if (moveCount >= moveLimit) {
+						print("Game Over!");
+						endScreen.Defeat();
+						StartCoroutine(LerpTimeScaleToZero(1));
+					}
+
+					anim.SetBool("IsCharging", false);
+					anim.SetTrigger("Charge");
 				}
-
-				anim.SetBool("IsCharging", false);
-				anim.SetTrigger("Charge");
 			}
 		}
 
@@ -153,5 +155,9 @@ public class PlayerMovement : MonoBehaviour {
 		playerData.ScoreUI = "Score: " + finalScore;
 
 		return finalScore;
+	}
+
+	public void ResetTimeScale() {
+		Time.timeScale = 1;
 	}
 }

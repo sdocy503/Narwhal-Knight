@@ -15,6 +15,7 @@ public class EndScreen : MonoBehaviour
     private Label stateLabel;
     private VisualElement starRow;
     private VisualElement container;
+    private PlayerMovement playerMovement;
 
     private void OnEnable()
     {
@@ -29,6 +30,7 @@ public class EndScreen : MonoBehaviour
         menuButton.RegisterCallback<ClickEvent>(OnMenuPress);
         retryButton.RegisterCallback<ClickEvent>(OnRetryPress);
         continueButton.RegisterCallback<ClickEvent>(OnContinuePress);
+        playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
     }
 
     private void OnDisable()
@@ -48,6 +50,7 @@ public class EndScreen : MonoBehaviour
         container.style.marginRight = VictoryMargin;
         container.style.marginTop = VictoryMargin;
         container.style.display = DisplayStyle.Flex;
+        playerMovement.enabled = false;
     }
 
     public void Defeat()
@@ -60,6 +63,7 @@ public class EndScreen : MonoBehaviour
         container.style.marginRight = DefeatMarginHori;
         container.style.marginTop = DefeatMarginVert;
         container.style.display = DisplayStyle.Flex;
+        playerMovement.enabled = false;
     }
 
     private void OnMenuPress(ClickEvent evt)
@@ -69,11 +73,26 @@ public class EndScreen : MonoBehaviour
 
     private void OnRetryPress(ClickEvent evt)
     {
+        //Just fixing the timescale
+        playerMovement.ResetTimeScale();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnContinuePress(ClickEvent evt)
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        playerMovement.ResetTimeScale();
+        // Load the next scene
+        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        var nextSceneIndex = currentSceneIndex + 1;
+        // Check if the next scene index is not out of bounds
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            // If there is no next scene, load the main menu or do something else
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
