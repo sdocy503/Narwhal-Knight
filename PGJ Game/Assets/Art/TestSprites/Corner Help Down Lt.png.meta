@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0eea790a0f6337a41a628ebca89d603b
+guid: 6752d0350c40b1943b42282ce4c5986c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2511173084079083069
-    second: Floor Fill_0
+      213: -9197171331455718497
+    second: Corner Help Down Lt_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Floor Fill_0
+      name: Corner Help Down Lt_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3c1b1f18265862dd0800000000000000
-      internalID: -2511173084079083069
+      spriteID: f9bec2a17651d5080800000000000000
+      internalID: -9197171331455718497
       vertices: []
       indices: 
       edges: []
@@ -146,7 +133,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Floor Fill_0: -2511173084079083069
+      Corner Help Down Lt_0: -9197171331455718497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
