@@ -3,7 +3,7 @@
     <Style src="project://database/Assets/UI%20Toolkit/USS/GlobalTextStyles.uss?fileID=7433441132597879392&amp;guid=64d14fe53d0058240aae2aa762c8766a&amp;type=3#GlobalTextStyles" />
     <Style src="project://database/Assets/UI%20Toolkit/USS/GlobalButtonStyles.uss?fileID=7433441132597879392&amp;guid=61ac0e82dfdebd947b9eb501c52ff454&amp;type=3#GlobalButtonStyles" />
     <engine:VisualElement class="container" style="flex-grow: 1;">
-        <engine:Label text="Select Level" style="font-size: 106px; -unity-font-style: bold; margin-bottom: 20px;" />
+        <engine:Label text="Select Level" class="title" style="margin-bottom: 20px;" />
         <engine:ScrollView name="ScrollView">
             <engine:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row;">
                 <engine:Button text="1" name="1" class="button-grid hover button-text" />

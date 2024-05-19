@@ -1,7 +1,8 @@
 .title {
     font-size: 106px;
-    -unity-font-style: bold;
+    -unity-font-style: normal;
     -unity-text-align: upper-center;
+    -unity-font-definition: url("project://database/Assets/Art/PixelTakhisis-ZajJ.ttf?fileID=12800000&guid=3f1a3e448eea6b44cabb097cbd8cda1f&type=3#PixelTakhisis-ZajJ");
 }
 
 .spacing {
@@ -13,9 +14,11 @@
 
 .button-text {
     font-size: 42px;
+    -unity-font-definition: url("project://database/Assets/Art/PixgamerRegular-OVD6A.ttf?fileID=12800000&guid=40bb99fb959f09242b372e7e0847d639&type=3#PixgamerRegular-OVD6A");
 }
 
 .subheader {
     font-size: 54px;
     -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/Art/PixgamerRegular-OVD6A.ttf?fileID=12800000&guid=40bb99fb959f09242b372e7e0847d639&type=3#PixgamerRegular-OVD6A");
 }

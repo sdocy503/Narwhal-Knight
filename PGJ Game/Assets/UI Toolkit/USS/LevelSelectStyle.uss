@@ -11,8 +11,9 @@
 .container {
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    margin-right: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    background-image: url("project://database/Assets/Art/12312.png?fileID=-137891648202703579&guid=0ea3dac95c6e964b0ba5a4333944f915&type=3#12312_0");
 }
