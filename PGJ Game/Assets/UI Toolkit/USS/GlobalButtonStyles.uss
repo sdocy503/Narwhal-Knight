@@ -10,5 +10,6 @@
     width: 250px;
     height: 75px;
     transition-duration: 0.1s;
-    background-color: rgb(154, 154, 154);
+    background-color: rgba(154, 154, 154, 0);
+    background-image: url("project://database/Assets/Art/Rectangle.png?fileID=2800000&guid=a35edafc982385d4e9a16df34a50ebd9&type=3#Rectangle");
 }
