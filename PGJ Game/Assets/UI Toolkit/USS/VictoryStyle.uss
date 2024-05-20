@@ -1,5 +1,5 @@
 .star {
-    background-image: url("project://database/Assets/Sprites/star.png?fileID=4815476061570213978&guid=2b71baa195d2e9e469f079f67c7c10d6&type=3#star_0");
+    background-image: url("project://database/Assets/Art/star.png?fileID=2800000&guid=2b71baa195d2e9e469f079f67c7c10d6&type=3#star");
 }
 
 .button {
