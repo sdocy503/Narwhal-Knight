@@ -3,19 +3,21 @@
     <Style src="project://database/Assets/UI%20Toolkit/USS/GlobalTextStyles.uss?fileID=7433441132597879392&amp;guid=64d14fe53d0058240aae2aa762c8766a&amp;type=3#GlobalTextStyles" />
     <engine:VisualElement name="Container" style="flex-grow: 1; margin-top: 25px; margin-right: 25px; margin-bottom: 25px; margin-left: 25px; transition-property: all; transition-duration: 0.01s;">
         <engine:VisualElement name="Spacer" class="spacer" style="flex-direction: row; justify-content: center;">
-            <TimerComponent style="flex-grow: 1; justify-content: center; align-items: center;">
-                <engine:Label text="123" name="Time" class="subheader" style="width: 100px; height: 75px; background-color: rgb(163, 163, 163); border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 7.5px; border-right-width: 7.5px; border-bottom-width: 7.5px; border-left-width: 7.5px; padding-top: 19px; padding-right: 70px; padding-bottom: 80px; padding-left: 70px; -unity-text-align: upper-center;">
-                    <Bindings>
-                        <engine:DataBinding property="text" data-source-path="timeInt" data-source-type="Timer, Assembly-CSharp" binding-mode="ToTarget" />
-                    </Bindings>
-                </engine:Label>
+            <TimerComponent style="flex-grow: 0; justify-content: center; align-items: center; flex-shrink: 0; height: 264px; width: 250px;">
+                <engine:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/circle.png?fileID=-6231044458718751821&amp;guid=68bcf878e890e02428d0ad72bc25da94&amp;type=3#circle_0&quot;); width: 265px; height: 250px; align-items: center; justify-content: center;">
+                    <engine:Label text="123" name="Time" class="subheader" style="width: 100px; height: 75px; padding-top: 19px; padding-right: 70px; padding-bottom: 80px; padding-left: 70px; -unity-text-align: upper-center; background-image: url(&quot;project://database/Assets/Art/Square.png?fileID=7482667652216324306&amp;guid=c3e6a6f4568db4748b661cb9b06db09d&amp;type=3#Square_0&quot;); margin-right: 2px; margin-top: 2px;">
+                        <Bindings>
+                            <engine:DataBinding property="text" data-source-path="timeInt" data-source-type="Timer, Assembly-CSharp" binding-mode="ToTarget" />
+                        </Bindings>
+                    </engine:Label>
+                </engine:VisualElement>
                 <Bindings>
                     <engine:DataBinding property="time" data-source-path="time" data-source-type="Timer, Assembly-CSharp" binding-mode="TwoWay" />
                     <engine:DataBinding property="timeLimit" data-source-path="timeLimit" data-source-type="Timer, Assembly-CSharp" binding-mode="ToTarget" />
                 </Bindings>
             </TimerComponent>
             <engine:VisualElement name="Spacer" class="spacer" style="width: 1200px;" />
-            <engine:VisualElement name="MovePlate" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgb(163, 163, 163); border-top-left-radius: 100px; border-top-right-radius: 100px; border-bottom-right-radius: 100px; border-bottom-left-radius: 100px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 7.5px; border-right-width: 7.5px; border-bottom-width: 7.5px; border-left-width: 7.5px; transition-property: scale; transition-duration: 2s; transition-timing-function: ease-out-elastic;">
+            <engine:VisualElement name="MovePlate" style="flex-grow: 1; align-items: center; justify-content: center; transition-property: scale; transition-duration: 2s; transition-timing-function: ease-out-elastic; background-image: url(&quot;project://database/Assets/Art/Square.png?fileID=7482667652216324306&amp;guid=c3e6a6f4568db4748b661cb9b06db09d&amp;type=3#Square_0&quot;); margin-top: 5px; margin-right: 20px; margin-bottom: 30px; margin-left: 20px;">
                 <engine:Label text="Moves:" class="subheader" style="width: 150px; -unity-text-align: middle-center; height: 75px;" />
                 <engine:Label text="14/21" name="MoveCount" class="subheader" style="-unity-text-align: middle-center; width: 150px; height: 75px;" />
             </engine:VisualElement>
