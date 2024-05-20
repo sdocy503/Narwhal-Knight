@@ -17,6 +17,7 @@ public class EndScreen : MonoBehaviour {
 	private VisualElement starRow;
 	private VisualElement container;
 	private PlayerMovement playerMovement;
+	private List<VisualElement> stars = new List<VisualElement>();
 
 	private void OnEnable() {
 		document = GetComponent<UIDocument>();
@@ -26,8 +27,11 @@ public class EndScreen : MonoBehaviour {
 		starRow = document.rootVisualElement.Q<VisualElement>("StarRow");
 		stateLabel = document.rootVisualElement.Q<Label>("State");
 		container = document.rootVisualElement.Q<VisualElement>("Container");
+		stars.Add(document.rootVisualElement.Q<VisualElement>("Star1"));
+        stars.Add(document.rootVisualElement.Q<VisualElement>("Star2"));
+        stars.Add(document.rootVisualElement.Q<VisualElement>("Star3"));
 
-		menuButton.RegisterCallback<ClickEvent>(OnMenuPress);
+        menuButton.RegisterCallback<ClickEvent>(OnMenuPress);
 		retryButton.RegisterCallback<ClickEvent>(OnRetryPress);
 		continueButton.RegisterCallback<ClickEvent>(OnContinuePress);
 		playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
@@ -39,7 +43,7 @@ public class EndScreen : MonoBehaviour {
 		continueButton.UnregisterCallback<ClickEvent>(OnContinuePress);
 	}
 
-	public void Victory() {
+	public void Victory(int numOfStars) {
 		stateLabel.text = "Victory!";
 		starRow.style.display = DisplayStyle.Flex;
 		continueButton.style.display = DisplayStyle.Flex;
@@ -49,6 +53,11 @@ public class EndScreen : MonoBehaviour {
 		container.style.marginTop = VictoryMargin;
 		container.style.display = DisplayStyle.Flex;
 		playerMovement.enabled = false;
+
+		for(int i = 0; i < numOfStars; i++)
+		{
+			stars[i].style.unityBackgroundImageTintColor = Color.white;
+		}
 	}
 
 	public void Defeat() {

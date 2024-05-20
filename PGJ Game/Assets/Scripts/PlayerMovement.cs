@@ -134,7 +134,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (other.gameObject.CompareTag("End") && enemies.Count == 0) {
 			endTime = Time.time;
-			endScreen.Victory();
+			endScreen.Victory(2);
 			StartCoroutine(LerpTimeScaleToZero(1));
 			print(CalculateScore());
 		}

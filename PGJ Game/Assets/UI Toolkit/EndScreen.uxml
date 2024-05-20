@@ -11,9 +11,9 @@
         </engine:Label>
         <engine:VisualElement name="StarRow" class="spacing" style="height: 248px; flex-direction: row; display: flex; flex-grow: 1;">
             <engine:VisualElement style="flex-grow: 1;" />
-            <engine:VisualElement name="Star1" class="star" style="flex-grow: 1;" />
-            <engine:VisualElement name="Star2" class="star" style="flex-grow: 1;" />
-            <engine:VisualElement name="Star3" class="star" style="flex-grow: 1;" />
+            <engine:VisualElement name="Star1" class="star" style="flex-grow: 1; display: flex; -unity-background-image-tint-color: rgb(0, 0, 0);" />
+            <engine:VisualElement name="Star2" class="star" style="flex-grow: 1; display: flex; -unity-background-image-tint-color: rgb(0, 0, 0);" />
+            <engine:VisualElement name="Star3" class="star" style="flex-grow: 1; display: flex; -unity-background-image-tint-color: rgb(0, 0, 0);" />
             <engine:VisualElement style="flex-grow: 1;" />
         </engine:VisualElement>
         <engine:VisualElement name="ButtonRow" style="flex-grow: 1; flex-direction: row; justify-content: center; align-items: center; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;">
