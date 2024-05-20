@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 979aef7a476bbc2478a72f9515dfa471
+guid: 395ba63d547d7a44293e3e7e99e94325
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4769608807440563949
-    second: Left Stick out wall_0
+      213: -2327420795556730957
+    second: CeiliLeft sticking out connector piece_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Left Stick out wall_0
+      name: CeiliLeft sticking out connector piece_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3114ee26f02fecdb0800000000000000
-      internalID: -4769608807440563949
+      spriteID: 3b7ebfd1e1753bfd0800000000000000
+      internalID: -2327420795556730957
       vertices: []
       indices: 
       edges: []
@@ -133,7 +133,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Left Stick out wall_0: -4769608807440563949
+      CeiliLeft sticking out connector piece_0: -2327420795556730957
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
