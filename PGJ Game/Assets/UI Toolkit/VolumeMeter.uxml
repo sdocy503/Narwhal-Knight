@@ -1,0 +1,10 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/GlobalTextStyles.uss?fileID=7433441132597879392&amp;guid=64d14fe53d0058240aae2aa762c8766a&amp;type=3#GlobalTextStyles" />
+    <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: column-reverse; align-items: flex-end; margin-top: 25px; margin-right: 25px; margin-bottom: 25px; margin-left: 25px;">
+        <engine:Slider label="Volume" value="0.5" high-value="1" fill="false" class="subheader" style="height: 101px; width: 419px; -unity-text-align: middle-left; background-image: url(&quot;project://database/Assets/Art/Rectangle.png?fileID=2800000&amp;guid=a35edafc982385d4e9a16df34a50ebd9&amp;type=3#Rectangle&quot;); padding-top: 20px; padding-right: 50px; padding-bottom: 20px; padding-left: 50px;">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="Volume" data-source-type="MusicHandler, Assembly-CSharp" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:Slider>
+    </engine:VisualElement>
+</engine:UXML>

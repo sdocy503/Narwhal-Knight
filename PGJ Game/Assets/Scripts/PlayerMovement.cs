@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour {
 	private int enemiesKilled;
 	private int coinsCollected;
 	private AudioSource audio;
+	private AudioSource masterAudio;
 	
 	
 	
@@ -42,6 +43,7 @@ public class PlayerMovement : MonoBehaviour {
 		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 		anim = GetComponentInChildren<Animator>();
 		audio = GetComponent<AudioSource>();
+		masterAudio = GameObject.Find("MusicHandle").GetComponent<AudioSource>();
 		anim.SetBool("Idle", true);
 		var enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
 		foreach (var enemy in enemyObjects) {
@@ -120,7 +122,9 @@ public class PlayerMovement : MonoBehaviour {
 			endScreen.Defeat();
 			StartCoroutine(LerpTimeScaleToZero(1));
 		}
-	}
+
+		audio.volume = masterAudio.volume;
+    }
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag("Enemy")) {

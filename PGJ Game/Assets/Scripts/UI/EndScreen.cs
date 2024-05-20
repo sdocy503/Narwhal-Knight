@@ -88,9 +88,6 @@ public class EndScreen : MonoBehaviour {
 		var score = playerMovement.CalculateScore();
 		var numOfStars = CalculateStars(score);
 
-		for(var i = 0; i < numOfStars; i++) {
-			stars[i].style.unityBackgroundImageTintColor = Color.white;
-		}
 		for(int i = 0; i < numOfStars; i++)
 			starsEffects.Add(stars[i]);
 	}
