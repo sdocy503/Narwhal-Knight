@@ -18,6 +18,8 @@ public class EndScreen : MonoBehaviour {
 	private VisualElement container;
 	private PlayerMovement playerMovement;
 	private List<VisualElement> stars = new List<VisualElement>();
+	private List<VisualElement> starsEffects = new List<VisualElement>();
+	private float time = 0f;
 
 	private void OnEnable() {
 		document = GetComponent<UIDocument>();
@@ -37,7 +39,36 @@ public class EndScreen : MonoBehaviour {
 		playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
 	}
 
-	private void OnDisable() {
+    private void Update()
+    {
+        if(starsEffects.Count != 0)
+		{
+            if (time > 0.4f)
+			{
+                starsEffects[0].transform.scale = new Vector3(1f, 1f);
+                starsEffects.RemoveAt(0);
+				time = 0f;
+			}
+			else
+			{
+				float val;
+
+				if (time > 0.2f)
+				{
+					val = Mathf.Lerp(1.5f, 1f, (time - 0.2f) / 0.2f);
+                    starsEffects[0].style.unityBackgroundImageTintColor = Color.white;
+                }
+				else
+					val = Mathf.Lerp(1f, 1.5f, time / 0.2f);
+
+				starsEffects[0].transform.scale = new Vector3(val, val);
+			}
+
+			time += Time.unscaledDeltaTime;
+		}
+    }
+
+    private void OnDisable() {
 		menuButton.UnregisterCallback<ClickEvent>(OnMenuPress);
 		retryButton.UnregisterCallback<ClickEvent>(OnRetryPress);
 		continueButton.UnregisterCallback<ClickEvent>(OnContinuePress);
@@ -55,9 +86,7 @@ public class EndScreen : MonoBehaviour {
 		playerMovement.enabled = false;
 
 		for(int i = 0; i < numOfStars; i++)
-		{
-			stars[i].style.unityBackgroundImageTintColor = Color.white;
-		}
+			starsEffects.Add(stars[i]);
 	}
 
 	public void Defeat() {
