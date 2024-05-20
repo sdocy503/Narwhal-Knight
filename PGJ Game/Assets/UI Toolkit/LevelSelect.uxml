@@ -6,15 +6,15 @@
         <engine:Label text="Select Level" class="title" style="margin-bottom: 20px;" />
         <engine:ScrollView name="ScrollView">
             <engine:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row;">
-                <engine:Button text="1" name="1" class="button-grid hover button subheader" style="width: 150px; height: 150px;" />
-                <engine:Button text="2" name="2" class="button-grid hover button subheader" style="width: 150px; height: 150px;" />
-                <engine:Button text="3" name="3" class="button-grid hover button subheader" style="width: 150px; height: 150px;" />
+                <engine:Button text="1" name="1" class="button-grid hover button subheader" style="width: 150px; height: 150px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+                <engine:Button text="2" name="2" class="button-grid hover button subheader" style="width: 150px; height: 150px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+                <engine:Button text="3" name="3" class="button-grid hover button subheader" style="width: 150px; height: 150px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
             </engine:VisualElement>
             <engine:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row;">
-                <engine:Button text="4" name="4" class="button-grid hover button subheader" style="height: 150px; width: 150px;" />
-                <engine:Button text="5" name="5" class="button-grid hover button subheader" style="width: 150px; height: 150px;" />
+                <engine:Button text="4" name="4" class="button-grid hover button subheader" style="height: 150px; width: 150px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+                <engine:Button text="5" name="5" class="button-grid hover button subheader" style="width: 150px; height: 150px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
             </engine:VisualElement>
         </engine:ScrollView>
-        <engine:Button text="Back" name="Back" class="button hover button-text" style="margin-top: 50px;" />
+        <engine:Button text="Back" name="Back" class="button hover button-text" style="margin-top: 50px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
     </engine:VisualElement>
 </engine:UXML>

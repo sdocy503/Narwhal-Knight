@@ -16,10 +16,10 @@
             <engine:VisualElement name="Star3" class="star" style="flex-grow: 1;" />
             <engine:VisualElement style="flex-grow: 1;" />
         </engine:VisualElement>
-        <engine:VisualElement name="ButtonRow" style="flex-grow: 1; flex-direction: row; justify-content: center; align-items: center;">
-            <engine:Button text="Main Menu" name="Menu" class="button button-text" />
-            <engine:Button text="Retry" name="Retry" class="button button-text" />
-            <engine:Button text="Next Level" name="Continue" class="button button-text" style="display: flex;" />
+        <engine:VisualElement name="ButtonRow" style="flex-grow: 1; flex-direction: row; justify-content: center; align-items: center; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;">
+            <engine:Button text="Main Menu" name="Menu" class="button button-text hover" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            <engine:Button text="Retry" name="Retry" class="button button-text hover" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            <engine:Button text="Next Level" name="Continue" class="button button-text hover" style="display: flex; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>

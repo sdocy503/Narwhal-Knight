@@ -4,9 +4,9 @@
     <Style src="project://database/Assets/UI%20Toolkit/USS/GlobalButtonStyles.uss?fileID=7433441132597879392&amp;guid=61ac0e82dfdebd947b9eb501c52ff454&amp;type=3#GlobalButtonStyles" />
     <engine:VisualElement name="Container" class="container" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/12312.png?fileID=-137891648202703579&amp;guid=0ea3dac95c6e964b0ba5a4333944f915&amp;type=3#12312_0&quot;);">
         <engine:Label text="Narwhal Knight" class="title element-padding element-spacing" style="margin-bottom: 50px;" />
-        <engine:Button text="Start" name="Start" class="button element-padding element-spacing hover button-text" />
-        <engine:Button text="Options" name="Options" class="button element-spacing hover button-text" />
-        <engine:Button text="Exit" name="Exit" class="button hover button-text" />
+        <engine:Button text="Start" name="Start" class="button element-padding element-spacing hover button-text" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+        <engine:Button text="Options" name="Options" class="button element-spacing hover button-text" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+        <engine:Button text="Exit" name="Exit" class="button hover button-text" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
         <engine:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row;">
             <engine:Label text="Credits&#10;Programing and sound by Ghrimbone&#10;Art by PeriwinkleDoodles&#10;UI and programming by WarlordSdocy" class="subheader" style="font-size: 54px; -unity-font-definition: url(&quot;project://database/Assets/Art/PixgamerRegular-OVD6A.ttf?fileID=12800000&amp;guid=40bb99fb959f09242b372e7e0847d639&amp;type=3#PixgamerRegular-OVD6A&quot;);" />
             <engine:Label text="External Assets&#10;Pixel Takhisis font from Pixel Sagas/Neale Davidson​&#10;Pixelgamer Regular font from Bryndan Meyerholt &#10;Coins from La Red Games&#10;Portal from Elthen" name="Label" class="subheader" style="font-size: 54px; -unity-font-definition: url(&quot;project://database/Assets/Art/PixgamerRegular-OVD6A.ttf?fileID=12800000&amp;guid=40bb99fb959f09242b372e7e0847d639&amp;type=3#PixgamerRegular-OVD6A&quot;); margin-left: 20px;" />
