@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -13,6 +11,7 @@ public class Timer : MonoBehaviour
 
     public float time = 0.0f;
     public float timeLimit = 1.0f;
+    public int timeInt = 0;
     private float t = 0.0f;
 
     private void Start()
@@ -30,6 +29,7 @@ public class Timer : MonoBehaviour
     {
         t += Time.fixedDeltaTime;
         time = (int)t;
+        timeInt = (int)(timeLimit - time);
         float scale = (timeLimit - time) / timeLimit;
         if (scale > 0.5f)
             timeCircle.style.unityBackgroundImageTintColor = UnityEngine.Color.Lerp(timerComp.yellow, timerComp.green, timerComp.greenToYellow.Evaluate(scale));
