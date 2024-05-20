@@ -7,5 +7,6 @@
         <engine:Button text="Start" name="Start" class="button element-padding element-spacing hover button-text" />
         <engine:Button text="Options" name="Options" class="button element-spacing hover button-text" />
         <engine:Button text="Exit" name="Exit" class="button hover button-text" />
+        <engine:Label text="Credits&#10;Programing and sound by Ghrimbone&#10;Art by PeriwinkleDoodles&#10;UI and programming by WarlordSdocy" style="font-size: 54px; -unity-font-definition: url(&quot;project://database/Assets/Art/PixgamerRegular-OVD6A.ttf?fileID=12800000&amp;guid=40bb99fb959f09242b372e7e0847d639&amp;type=3#PixgamerRegular-OVD6A&quot;);" />
     </engine:VisualElement>
 </engine:UXML>
