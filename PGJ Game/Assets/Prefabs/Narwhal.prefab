@@ -5068,6 +5068,7 @@ GameObject:
   - component: {fileID: 4144780690651934688}
   - component: {fileID: 5284692950868614921}
   - component: {fileID: 6775315052480069455}
+  - component: {fileID: 3804465067585572162}
   m_Layer: 0
   m_Name: Art
   m_TagString: Untagged
@@ -5185,6 +5186,68 @@ MonoBehaviour:
   chargingBubbles: {fileID: 6642128974818595249}
   boostBubbles: {fileID: 3478937282757207498}
   rb: {fileID: 412667858772444898}
+--- !u!114 &3804465067585572162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173631576774982158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411e3663b9f85114ebc8bfce35256c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bob: 0.2
+  bobTime: 8
+  interpolationStop:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  interpolationStart:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4045560177237535250
 GameObject:
   m_ObjectHideFlags: 0
