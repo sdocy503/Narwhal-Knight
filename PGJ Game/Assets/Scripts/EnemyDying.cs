@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class EnemyDying : MonoBehaviour {
 	private SpriteRenderer renderer;
-
+	private Animator anim;
 	private void Awake() {
 		renderer = GetComponent<SpriteRenderer>();
+		anim = GetComponent<Animator>();
 	}
 
 	public void Die() {
 		StartCoroutine(FadeOut());
+		anim.SetBool("IsDead", true);
 	}
 
 	IEnumerator FadeOut() {
