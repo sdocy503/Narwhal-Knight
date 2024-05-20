@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LevelFiveData
   m_EditorClassIdentifier: 
   TimeLimit: 60
-  MoveLimit: 15
+  MoveLimit: 10

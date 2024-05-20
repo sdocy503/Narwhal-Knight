@@ -13,7 +13,7 @@ public class UITesting : MonoBehaviour {
 
 
 	void SwapVic() {
-		endScreen.Victory(2);
+		endScreen.Victory();
 		data.MoveCount += 2;
 	}
 

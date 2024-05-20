@@ -136,9 +136,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1743034231}
     - target: {fileID: 4847180415676657039, guid: 244f1c3994b6324dcac10db0df681fc3, type: 3}
+      propertyPath: moveLimit
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847180415676657039, guid: 244f1c3994b6324dcac10db0df681fc3, type: 3}
       propertyPath: moveCounter
       value: 
       objectReference: {fileID: 1207166326}
+    - target: {fileID: 4847180415676657039, guid: 244f1c3994b6324dcac10db0df681fc3, type: 3}
+      propertyPath: 'maxScoresPerLevel.Array.data[2]'
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847180415676657039, guid: 244f1c3994b6324dcac10db0df681fc3, type: 3}
+      propertyPath: 'maxScoresPerLevel.Array.data[3]'
+      value: 146
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847180415676657039, guid: 244f1c3994b6324dcac10db0df681fc3, type: 3}
+      propertyPath: 'maxScoresPerLevel.Array.data[4]'
+      value: 141
+      objectReference: {fileID: 0}
     - target: {fileID: 6203886961259587830, guid: 244f1c3994b6324dcac10db0df681fc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7

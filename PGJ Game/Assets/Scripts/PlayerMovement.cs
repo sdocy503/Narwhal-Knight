@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 	public float maxChargeTime = 2.0f;
@@ -17,6 +19,9 @@ public class PlayerMovement : MonoBehaviour {
 	public float levelTimeLimit = 60;
 	public MoveCounter moveCounter;
 	public AudioClip killSound, dashSound, coinPickupSound;
+	
+	public int currentLevel = 0;
+	public List<float> maxScoresPerLevel = new() {0, 45, 140, 140, 275};
 
 	private Animator anim;
 	private Rigidbody2D rb;
@@ -29,7 +34,9 @@ public class PlayerMovement : MonoBehaviour {
 	private int enemiesKilled;
 	private int coinsCollected;
 	private AudioSource audio;
-
+	
+	
+	
 	private void Awake() {
 		rb = GetComponent<Rigidbody2D>();
 		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -42,6 +49,11 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		startTime = Time.time;
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	private void OnDestroy() {
+		SceneManager.sceneLoaded -= OnSceneLoaded;
 	}
 
 	private void Start() {
@@ -49,6 +61,10 @@ public class PlayerMovement : MonoBehaviour {
 		levelStartTime = Time.time;
 		moveCount = 0;
 		playerData.MoveCount = moveCount;
+	}
+	
+	private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+		currentLevel = scene.buildIndex;
 	}
 
 	void Update() {
@@ -134,7 +150,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (other.gameObject.CompareTag("End") && enemies.Count == 0) {
 			endTime = Time.time;
-			endScreen.Victory(2);
+			endScreen.Victory();
 			StartCoroutine(LerpTimeScaleToZero(1));
 			print(CalculateScore());
 		}

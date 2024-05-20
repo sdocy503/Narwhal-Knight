@@ -43,7 +43,7 @@ public class EndScreen : MonoBehaviour {
 		continueButton.UnregisterCallback<ClickEvent>(OnContinuePress);
 	}
 
-	public void Victory(int numOfStars) {
+	public void Victory() {
 		stateLabel.text = "Victory!";
 		starRow.style.display = DisplayStyle.Flex;
 		continueButton.style.display = DisplayStyle.Flex;
@@ -54,9 +54,28 @@ public class EndScreen : MonoBehaviour {
 		container.style.display = DisplayStyle.Flex;
 		playerMovement.enabled = false;
 
-		for(int i = 0; i < numOfStars; i++)
-		{
+		var score = playerMovement.CalculateScore();
+		var numOfStars = CalculateStars(score);
+
+		for(var i = 0; i < numOfStars; i++) {
 			stars[i].style.unityBackgroundImageTintColor = Color.white;
+		}
+	}
+
+	private int CalculateStars(float score) {
+		var maxScore = playerMovement.maxScoresPerLevel[playerMovement.currentLevel];
+
+		var threeStarScore = maxScore * 0.8f;
+		var twoStarScore = maxScore * 0.5f;
+
+		if (score >= threeStarScore) {
+			return 3;
+		}
+		else if (score >= twoStarScore) {
+			return 2;
+		}
+		else {
+			return 1;
 		}
 	}
 

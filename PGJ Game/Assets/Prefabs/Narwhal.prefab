@@ -56,13 +56,21 @@ MonoBehaviour:
   score: 0
   coins: 0
   playerData: {fileID: 11400000, guid: 8b7290aa7d5b0274e9aa224210523936, type: 2}
-  moveLimit: 15
-  totalCoins: 2
-  levelTimeLimit: 60
+  moveLimit: 3
+  totalCoins: 0
+  levelTimeLimit: 30
   moveCounter: {fileID: 0}
   killSound: {fileID: 8300000, guid: efc1e970640f11e498025275bf1788ca, type: 3}
   dashSound: {fileID: 8300000, guid: 8f26d71e16225d0e9bc3ec86b15defd0, type: 3}
   coinPickupSound: {fileID: 8300000, guid: 871f60b5e99a45a95b7ff04e66547eb0, type: 3}
+  currentLevel: 0
+  maxScoresPerLevel:
+  - 0
+  - 0
+  - 45
+  - 140
+  - 140
+  - 275
 --- !u!50 &412667858772444898
 Rigidbody2D:
   serializedVersion: 4
