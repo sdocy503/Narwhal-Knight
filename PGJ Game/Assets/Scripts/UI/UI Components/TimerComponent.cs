@@ -19,6 +19,21 @@ public partial class TimerComponent : VisualElement
         }
     }
 
+    [UxmlAttribute, CreateProperty]
+    public AnimationCurve greenToYellow;
+
+    [UxmlAttribute, CreateProperty]
+    public AnimationCurve yellowToRed;
+
+    [UxmlAttribute, CreateProperty]
+    public Color green;
+
+    [UxmlAttribute, CreateProperty]
+    public Color yellow;
+
+    [UxmlAttribute, CreateProperty]
+    public Color red;
+
     [SerializeField, DontCreateProperty]
     float m_timeLimit = 1f;
 
@@ -54,9 +69,13 @@ public partial class TimerComponent : VisualElement
         painter.BeginPath();
         painter.lineWidth = 7.5f;
         painter.LineTo(new Vector2(width * 0.5f, height * 0.5f));
-        painter.Arc(new Vector2(width * 0.5f, height * 0.5f), size * 0.5f - 1.25f, Mathf.Lerp(270f, -89f, (m_timeLimit - m_time) / m_timeLimit), 270f);
+        float time = (m_timeLimit - m_time) / m_timeLimit;
+        painter.Arc(new Vector2(width * 0.5f, height * 0.5f), size * 0.5f - 1.25f, Mathf.Lerp(270f, -89f, time), 270f);
         painter.ClosePath();
-        painter.fillColor = Color.white;
+        if(time > 0.5f)
+            painter.fillColor = Color.Lerp(yellow, green, greenToYellow.Evaluate(time));
+        else
+            painter.fillColor = Color.Lerp(red, yellow, yellowToRed.Evaluate(time));
         painter.Fill(FillRule.NonZero);
         painter.Stroke();
     }
