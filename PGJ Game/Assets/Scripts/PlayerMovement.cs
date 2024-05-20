@@ -112,7 +112,14 @@ public class PlayerMovement : MonoBehaviour {
 				enemiesKilled++;
 				enemies.Remove(other.gameObject);
 				audio.PlayOneShot(killSound);
-				Destroy(other.gameObject);
+
+				// Find the enemy object with the EnemyDying script attached to it
+				var enemyDying = other.gameObject.GetComponent<EnemyDying>();
+				if (enemyDying != null) {
+					// Call the Die method before destroying the enemy object
+					enemyDying.Die();
+					Destroy(other.gameObject, 1f); // Delay the destruction to allow the fade out effect to complete
+				}
 			}
 			else {
 				rb.velocity = -rb.velocity;
