@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 33c57319fddb2364fb5ca144d3f34261
+guid: 245560abd408ca74aabe0916276d0ea4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7612884339395523927
-    second: CoverArt_0
+      213: 7086870712038898488
+    second: Up aFloor nub 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CoverArt_0
+      name: Up aFloor nub 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 629
-        height: 498
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9aa0232370a995690800000000000000
-      internalID: -7612884339395523927
+      spriteID: 83bb2306d5f995260800000000000000
+      internalID: 7086870712038898488
       vertices: []
       indices: 
       edges: []
@@ -133,7 +133,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CoverArt_0: -7612884339395523927
+      Up aFloor nub 1_0: 7086870712038898488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
